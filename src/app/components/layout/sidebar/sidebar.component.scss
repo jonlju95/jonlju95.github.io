@@ -1,0 +1,49 @@
+@import '../../../assets/styles/_themes.scss';
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--neutral-500);
+  color: var(--neutral-50);
+  box-shadow: #333333 0px 0px 10px 0px;
+
+  &.sidebar-open {
+    display: block;
+    animation: openSidebar 0.5s forwards;
+  }
+
+  &.sidebar-closed {
+    animation: closeSidebar 0.5s forwards;
+  }
+
+  @keyframes openSidebar {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 300px;
+    }
+  }
+
+  @keyframes closeSidebar {
+    0% {
+      width: 300px;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+}
+
+.theme-switcher {
+  margin-right: 2rem;
+  i {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}

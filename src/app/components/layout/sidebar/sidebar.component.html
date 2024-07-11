@@ -1,0 +1,21 @@
+<ng-container>
+  <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarService.isActive, 'sidebar-closed': !sidebarService.isActive }">
+      <div *ngIf="sidebarService.isActive">
+        <div class="row mt-4">
+          <div class="col-12 h-100 d-flex flex-direction-row align-items-center">
+            <div class="col-6">
+              <div class="ms-3 pe-3 ps-3 clickable" (click)="toggleSidebar()">
+                <i class ="fas fa-solid fa-bars"></i>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="theme-switcher clickable d-flex justify-content-end" (click)="onThemeSwitchChange()">
+                <i class="fas fa-moon" *ngIf="themeService.currentTheme === 'light'" ></i>
+                <i class="fas fa-sun" *ngIf="themeService.currentTheme !== 'light'"></i>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</ng-container>
