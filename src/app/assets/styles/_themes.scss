@@ -1,4 +1,4 @@
-[data-theme="light"] {
+:root {
   --neutral-0: #ffffff;
   --neutral-50: #f6f7f9;
   --neutral-100: #edf0f2;
@@ -11,6 +11,9 @@
   --neutral-800: #404b5a;
   --neutral-900: #181d25;
   --neutral-1000: #000000;
+
+  --background-color: var(--neutral-50);
+  --text-color: var(--neutral-900);
 }
 
 [data-theme="dark"] {
@@ -26,6 +29,9 @@
   --neutral-800: #d3d8df;
   --neutral-900: #edeff3;
   --neutral-1000: #ffffff;
+
+  --background-color: var(--neutral-50);
+  --text-color: var(--neutral-900);
 }
 
 [accent-theme] {

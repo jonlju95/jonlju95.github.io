@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SidebarService {
+  // Sidebar should be closed on load
   private isOpen: boolean = false;
 
   constructor() { }

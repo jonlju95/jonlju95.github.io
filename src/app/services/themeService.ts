@@ -8,7 +8,6 @@ export class ThemeService implements OnInit {
   private isLightTheme: boolean = true;
 
   ngOnInit(): void {
-    document.body.setAttribute('data-theme', 'light');
   }
 
   toggleTheme(): void {

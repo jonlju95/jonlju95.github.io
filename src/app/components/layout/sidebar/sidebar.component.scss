@@ -9,34 +9,16 @@
   background-color: var(--neutral-500);
   color: var(--neutral-50);
   box-shadow: #333333 0px 0px 10px 0px;
+  overflow-x: hidden;
+  border-radius: 6px;
+  transition: width 0.5s ease;
 
   &.sidebar-open {
-    display: block;
-    animation: openSidebar 0.5s forwards;
+    width: 300px;
   }
 
   &.sidebar-closed {
-    animation: closeSidebar 0.5s forwards;
-  }
-
-  @keyframes openSidebar {
-    0% {
-      width: 0;
-    }
-
-    100% {
-      width: 300px;
-    }
-  }
-
-  @keyframes closeSidebar {
-    0% {
-      width: 300px;
-    }
-
-    100% {
-      width: 0;
-    }
+    width: 3rem;
   }
 }
 
@@ -45,5 +27,15 @@
   i {
     width: 16px !important;
     height: 16px !important;
+  }
+}
+
+.sidebarToggle {
+  position: absolute;
+  right: 1.5rem;
+  width: auto;
+
+  i {
+    margin-left: 50%;
   }
 }
