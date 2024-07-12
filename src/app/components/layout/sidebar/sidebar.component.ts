@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SidebarService } from '../../../services/sidebarService';
 import { ThemeService } from '../../../services/themeService';
 

@@ -1,0 +1,21 @@
+.cookie-consent-banner {
+  position: fixed;
+  right: 1rem;
+  width: 10%;
+  background-color: #f6f7f9;
+  color: #333333;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: #333333 0px 0px 10px 0px;
+  animation: slide-in forwards 1s ease-in-out;
+
+  @keyframes slide-in {
+    0% {
+      bottom: -15%;
+    }
+    100% {
+      bottom: 5%;
+    }
+  }
+}
