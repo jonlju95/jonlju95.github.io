@@ -1,24 +1,26 @@
 <ng-container>
-  <div class="animated-element sidebar"
-    [ngClass]="{ 'sidebar-open': sidebarService.isActive, 'sidebar-closed': !sidebarService.isActive }">
-    <div>
-      <div class="mt-4">
-        <div class="clickable sidebarToggle" (click)="toggleSidebar()">
-          <i class="fas fa-solid fa-bars"></i>
-        </div>
-
+  <div class="animated-element sidebar hide"
+    [ngClass]="{ 'sidebar-open': sidebarService.isActive, 'sidebar-closed': !sidebarService.isActive }"
+    (mouseenter)="expandSidebar(true)" (mouseleave)="expandSidebar(false)">
+    <div class="row mt-3 ms-3 me-3">
+      <div class="col">
       </div>
     </div>
-    <div class="col-6" *ngIf="sidebarService.isActive">
-      <div class="theme-switcher clickable d-flex justify-content-end" (click)="onThemeSwitchChange()">
-        <i class="fas fa-sun" *ngIf="themeService.currentTheme === 'dark'"></i>
-
-        <i class="fas fa-moon" *ngIf="themeService.currentTheme === 'light'"></i>
+    <div class="row mt-3">
+      <div class="sidebar-action col-12 d-flex align-items-center justify-content-between">
+        <div class="d-flex col-1">
+          <i class="sidebar-icon fas fa-moon"></i>
+        </div>
+        <div class="sidebar-text fadeOut col">
+          <span>Dark mode</span>
+        </div>
+        <div class="theme-switch fadeOut col-2">
+          <div class="form-switch clickable font-size-large" (change)="onThemeSwitchChange()">
+            <input class="form-check-input clickable" type="checkbox" [checked]="themeService.currentTheme === 'dark'">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
 </ng-container>
-
-
-

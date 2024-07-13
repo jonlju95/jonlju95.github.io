@@ -13,7 +13,7 @@ export class HeaderComponent {
   constructor(public sidebarService: SidebarService) {}
 
   public toggleSidebar() {
-    this.sidebarService.toggleSidebar();
+    // this.sidebarService.toggleSidebar();
   }
 
 }

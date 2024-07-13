@@ -9,8 +9,8 @@ export class SidebarService {
 
   constructor() { }
 
-  toggleSidebar(): void {
-    this.isOpen = !this.isOpen;
+  setActive(open: boolean): void {
+    this.isOpen = open;
   }
 
   get isActive(): boolean {

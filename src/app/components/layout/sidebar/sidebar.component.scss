@@ -1,6 +1,7 @@
 @import '../../../assets/styles/_themes.scss';
 
 .sidebar {
+  width: 4rem;
   height: 100%;
   position: fixed;
   z-index: 1;
@@ -10,32 +11,86 @@
   color: var(--neutral-50);
   box-shadow: #333333 0px 0px 10px 0px;
   overflow-x: hidden;
-  border-radius: 6px;
-  transition: width 0.5s ease;
+  border-radius: 0 6px 6px 0;
+  transition: width 0.5s ease-in-out;
+  padding: 1rem 1rem 3rem 1.5rem;
+  white-space: nowrap;
 
-  &.sidebar-open {
-    width: 300px;
+  &.hide {
+    animation: shrinkSidebar 0.4s ease-in-out forwards;
   }
 
-  &.sidebar-closed {
-    width: 3rem;
+  &.expand {
+    animation: expandSidebar 0.4s ease-in-out forwards;
+  }
+
+  .row {
+    height: 5%;
+
+    &:first-child {
+      border-bottom: var(--neutral-400) 1px solid;
+    }
   }
 }
 
-.theme-switcher {
-  margin-right: 2rem;
-  i {
-    width: 16px !important;
-    height: 16px !important;
+.sidebar-action {
+  .sidebar-icon {
+    font-size: x-large;
+    opacity: 1 !important;
+  }
+
+  .sidebar-text {
+    transition: opacity 0.2s ease-in-out;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+  }
+
+  .fadeOut {
+    animation: fadeOut 0.2s ease-in-out forwards;
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.2s ease-in-out forwards;
   }
 }
 
-.sidebarToggle {
-  position: absolute;
-  right: 1.5rem;
-  width: auto;
+@keyframes shrinkSidebar {
+  from {
+    width: 15rem;
+  }
 
-  i {
-    margin-left: 50%;
+  to {
+    width: 4rem;
+  }
+}
+
+@keyframes expandSidebar {
+  from {
+    width: 4rem;
+  }
+
+  to {
+    width: 15rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }

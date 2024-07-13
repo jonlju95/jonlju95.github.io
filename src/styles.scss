@@ -27,3 +27,13 @@ body {
 .clickable {
   cursor: pointer;
 }
+
+.tooltip {
+  font-family: 'Karla', sans-serif;
+  font-size: 1rem;
+  position: fixed !important;
+  z-index: 10000;
+  margin-left: 0.75rem !important;
+  --bs-tooltip-bg: var(--neutral-600);
+  --bs-tooltip-color: var(--neutral-0);
+}
