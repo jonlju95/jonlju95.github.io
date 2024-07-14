@@ -7,6 +7,8 @@ import { SidebarComponent } from "./components/layout/sidebar/sidebar.component"
 import { MainWindowComponent } from "./components/layout/main-window/main-window.component";
 import { FooterComponent } from "./components/layout/footer/footer.component";
 import { RouterOutlet } from '@angular/router';
+import { LanguageService } from './services/languageService';
+import { TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +16,13 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet, HeaderComponent, CookieConsentModule, SidebarComponent, MainWindowComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ThemeService, SidebarService],
+  providers: [ThemeService, SidebarService, LanguageService, TranslateModule]
 })
 export class AppComponent implements OnInit {
   title = 'jonlju95.github.io';
 
-  constructor(public themeService: ThemeService, public sidebarService: SidebarService) {
+  constructor(public themeService: ThemeService, public sidebarService: SidebarService, public languageService: LanguageService) {
+
   }
 
   ngOnInit(): void {

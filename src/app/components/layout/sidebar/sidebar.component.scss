@@ -1,7 +1,6 @@
-@import '../../../assets/styles/_themes.scss';
+@import '../../../../assets/styles/themes.scss';
 
 .sidebar {
-  width: 4rem;
   height: 100%;
   position: fixed;
   z-index: 1;
@@ -11,47 +10,70 @@
   color: var(--neutral-50);
   box-shadow: #333333 0px 0px 10px 0px;
   overflow-x: hidden;
+  overflow-y: hidden;
   border-radius: 0 6px 6px 0;
-  transition: width 0.5s ease-in-out;
   padding: 1rem 1rem 3rem 1.5rem;
   white-space: nowrap;
+  transition: width 0.4s ease-in-out;
 
-  &.hide {
-    animation: shrinkSidebar 0.4s ease-in-out forwards;
+  &.hidden {
+    width: 15rem;
+    animation: 0.4s ease-in-out 0.4s forwards shrinkSidebar;
   }
 
-  &.expand {
-    animation: expandSidebar 0.4s ease-in-out forwards;
+  &.expanded {
+    width: 4rem;
+    animation: 0.4s ease-in-out forwards expandSidebar;
   }
 
   .row {
     height: 5%;
+    margin-right: inherit;
 
     &:first-child {
       border-bottom: var(--neutral-400) 1px solid;
     }
+
+    &:last-child {
+      border-top: var(--neutral-400) 1px solid;
+    }
+
   }
 }
 
 .sidebar-action {
+  font-size: large;
+  padding: 0.5rem;
+  border-radius: 6px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--neutral-300);
+  }
+
   .sidebar-icon {
     font-size: x-large;
     opacity: 1 !important;
+
+    &.fa-address-card, &.fa-language {
+      position: relative;
+      left: -0.25rem;
+    }
   }
 
   .sidebar-text {
-    transition: opacity 0.2s ease-in-out;
-    font-size: large;
     display: flex;
     justify-content: center;
   }
 
   .fadeOut {
+    opacity: 1;
     animation: fadeOut 0.2s ease-in-out forwards;
   }
 
   .fadeIn {
-    animation: fadeIn 0.2s ease-in-out forwards;
+    opacity: 0;
+    animation: fadeIn 0.2s ease-in-out forwards 0.4s;
   }
 }
 
