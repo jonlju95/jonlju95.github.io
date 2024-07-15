@@ -1,4 +1,5 @@
-<div *ngIf="!consentGiven" class="cookie-consent-banner">
-  <p>This site uses cookies to save your theme preference.</p>
+<div *ngIf="consentGiven.length === 0" class="cookie-consent-banner">
+  <p>This site uses cookies to save your theme and language preferences.</p>
   <button class="btn btn-primary" (click)="acceptCookies()">Accept</button>
+  <button class="btn btn-secondary" (click)="declineCookies()">Decline</button>
 </div>

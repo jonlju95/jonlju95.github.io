@@ -17,7 +17,7 @@ export class ThemeService {
   }
 
   toggleTheme(): void {
-    if (isPlatformBrowser(this.platformId) && this.cookieService.check(this.consentKey)) {
+    if (isPlatformBrowser(this.platformId) && this.cookieService.get(this.consentKey)) {
       const currentTheme = this.document.body.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       this.document.body.setAttribute('data-theme', newTheme);
@@ -30,7 +30,7 @@ export class ThemeService {
   }
 
   loadTheme(): void {
-    if (this.cookieService.check(this.consentKey)) {
+    if (this.cookieService.get(this.consentKey)) {
       const savedTheme = this.cookieService.get(this.themeKey) || 'light';
       this.document.body.setAttribute('data-theme', savedTheme);
     }

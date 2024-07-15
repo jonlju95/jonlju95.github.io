@@ -14,6 +14,17 @@
 
   --background-color: var(--neutral-50);
   --text-color: var(--neutral-900);
+
+  --accent-50: #e5f2ff;
+  --accent-100: #b3d4ff;
+  --accent-200: #80b5ff;
+  --accent-300: #4d97ff;
+  --accent-400: #1a78ff;
+  --accent-500: #005fe6;
+  --accent-600: #0049b3;
+  --accent-700: #003380;
+  --accent-800: #001c4d;
+  --accent-900: #00061a;
 }
 
 [data-theme="dark"] {
@@ -32,17 +43,4 @@
 
   --background-color: var(--neutral-50);
   --text-color: var(--neutral-900);
-}
-
-[accent-theme] {
-  --accent-50: #e5f2ff;
-  --accent-100: #b3d4ff;
-  --accent-200: #80b5ff;
-  --accent-300: #4d97ff;
-  --accent-400: #1a78ff;
-  --accent-500: #005fe6;
-  --accent-600: #0049b3;
-  --accent-700: #003380;
-  --accent-800: #001c4d;
-  --accent-900: #00061a;
 }
