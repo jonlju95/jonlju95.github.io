@@ -21,6 +21,6 @@ export class HeaderComponent {
 
   public onLanguageChange() {
     const currentLang = this.languageService.getCurrentLang() === 'en' ? 'se' : 'en';
-    this.languageService.setLanguage(currentLang);
+    this.languageService.toggleLanguage(currentLang);
   }
 }

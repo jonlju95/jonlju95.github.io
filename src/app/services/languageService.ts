@@ -7,6 +7,7 @@ import { CookieService } from "ngx-cookie-service";
   providedIn: 'root',
 })
 export class LanguageService {
+  private readonly langKey = 'lang';
   private readonly consentKey = 'cookieConsent';
   public langs = ['en', 'se'];
 
@@ -18,19 +19,24 @@ export class LanguageService {
     this.loadLanguage();
   }
 
-  public loadLanguage(lang: string): void {
+  toggleLanguage(lang: string): void {
     if (isPlatformBrowser(this.platformId) && this.cookieService.get(this.consentKey)) {
-      this.translateService.use(lang);
-    }
-  }
-
-  setLanguage(lang: string): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.translateService.use(lang);
+      const currentLang = this.translateService.currentLang;
+      const newLang = currentLang === 'en' ? 'se' : 'en';
+      this.translateService.use(newLang);
+      this.cookieService.set(this.langKey, newLang, { path: '/' });
     }
   }
 
   getCurrentLang(): string {
-    return this.translateService.currentLang;
+    return this.translateService.currentLang || 'se';
+  }
+
+  loadLanguage(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLang = this.cookieService.get(this.langKey) || 'en';
+      const lang = this.langs.includes(savedLang) ? savedLang : 'en';
+      this.translateService.use(lang);
+    }
   }
 }
