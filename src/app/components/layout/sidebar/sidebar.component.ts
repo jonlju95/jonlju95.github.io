@@ -40,8 +40,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
   onLanguageChange() {
-    const currentLang = this.languageService.getCurrentLang() === 'en' ? 'se' : 'en';
-    this.languageService.toggleLanguage(currentLang);
+    // const currentLang = this.languageService.getCurrentLang() === 'en' ? 'se' : 'en';
+    // this.languageService.toggleLanguage(currentLang);
   }
 
   expandSidebar(expand: boolean) {

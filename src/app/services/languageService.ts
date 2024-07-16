@@ -1,6 +1,6 @@
 import { DOCUMENT, isPlatformBrowser } from "@angular/common";
 import { Inject, Injectable, PLATFORM_ID } from "@angular/core";
-import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { TranslateService } from "@ngx-translate/core";
 import { CookieService } from "ngx-cookie-service";
 
 @Injectable({
@@ -19,11 +19,11 @@ export class LanguageService {
     this.loadLanguage();
   }
 
-  toggleLanguage(lang: string): void {
-    if (isPlatformBrowser(this.platformId) && this.cookieService.get(this.consentKey)) {
-      const currentLang = this.translateService.currentLang;
-      const newLang = currentLang === 'en' ? 'se' : 'en';
-      this.translateService.use(newLang);
+  toggleLanguage(): void {
+    const currentLang = this.translateService.currentLang;
+    const newLang = currentLang === 'en' ? 'se' : 'en';
+    this.translateService.use(newLang);
+    if (isPlatformBrowser(this.platformId) && this.cookieService.get(this.consentKey) === 'true') {
       this.cookieService.set(this.langKey, newLang, { path: '/' });
     }
   }

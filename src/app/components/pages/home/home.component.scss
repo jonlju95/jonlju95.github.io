@@ -1,0 +1,28 @@
+@import '../../../../assets/styles/themes.scss';
+
+.home {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 56px;
+  background-color: transparent;
+
+  .row {
+    height: 3rem;
+
+    &:first-child {
+      background-color: transparent;
+    }
+
+    &:nth-child(2n+3) {
+      background-color: var(--neutral-200);
+    }
+
+    &:nth-child(even) {
+      background-color: var(--neutral-300);
+    }
+  }
+
+
+
+}

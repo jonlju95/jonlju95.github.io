@@ -12,14 +12,13 @@
         <div class="d-flex align-items-center p-3 clickable" (click)="onThemeSwitchChange()"
         [ngbTooltip]="'Dark Mode' | translate" placement="bottom-end"
         [tooltipClass]="'animated-element tooltip'">
-          <i *ngIf="themeService.currentTheme === 'dark'" class="fas fa-moon"></i>
-          <i *ngIf="themeService.currentTheme === 'light'" class="far fa-moon"></i>
+          <i [ngClass]="{ 'fas': this.themeService.currentTheme === 'dark', 'far': this.themeService.currentTheme !== 'dark'}" class="fa-moon"></i>
         </div>
         <div class="d-flex align-items-center p-3 clickable language-button" (click)="onLanguageChange()"
         [ngbTooltip]="'Language' | translate" placement="bottom-end"
         [tooltipClass]="'animated-element tooltip'">
-          <img *ngIf="languageService.getCurrentLang() === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png">
-          <img *ngIf="languageService.getCurrentLang() === 'se'" src="../../../../assets/images/sweden-flag-icon.png">
+          <img *ngIf="this.languageService.getCurrentLang() === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png">
+          <img *ngIf="this.languageService.getCurrentLang() === 'se'" src="../../../../assets/images/sweden-flag-icon.png">
         </div>
       </div>
     </div>
