@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
       window.addEventListener("load", () => {
         document.body.classList.remove("preload");
       });
-
     }
   }
 }
