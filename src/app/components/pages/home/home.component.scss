@@ -8,14 +8,26 @@
   background-color: transparent;
   color: var(--neutral-900);
 
+  .profile {
+    background-color: white;
+    width: 75%;
+    height: 0;
+    padding-top: 75%;
+    border-radius: 50%;
+
+    span {
+      position: relative;
+      top: -40vh;
+      left: 40%
+    }
+  }
 
   .row {
-    height: 3rem;
     padding: 50px 3rem 80px 3rem;
-
 
     &:first-child {
       background-color: transparent;
+      height: 100vh;
     }
 
     &:nth-child(2n+3) {
@@ -26,7 +38,4 @@
       background-color: var(--neutral-300);
     }
   }
-
-
-
 }
