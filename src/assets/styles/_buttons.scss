@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import './../styles/_themes.scss';
+
+.btn {
+    font-family: 'Montserrat', sans-serif !important;
+
+    &.btn-primary {
+        background-color: var(--neutral-200);
+        border-color: var(--neutral-200);
+        color: var(--neutral-900);
+    }
+
+    &.btn-secondary {
+        background-color: var(--neutral-300);
+        border-color: var(--neutral-300);
+        color: var(--neutral-900);
+    }
+}
