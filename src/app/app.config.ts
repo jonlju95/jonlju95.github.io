@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
@@ -17,7 +17,8 @@ export const appConfig: ApplicationConfig = {
     CommonModule,
     CookieConsentModule,
     NgbModule,
-    provideRouter(routes),
+    provideRouter(routes, withViewTransitions({
+      skipInitialTransition: true})),
     provideClientHydration(),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(TranslateModule.forRoot({

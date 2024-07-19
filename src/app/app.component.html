@@ -1,9 +1,9 @@
 <ng-container class="animated-element">
   <div class="app-container">
     <app-header></app-header>
-    <div class="app-content" >
-      <div class="app-inner-content" [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''">
-        <router-outlet #outlet="outlet"></router-outlet>
+    <div class="app-content" [style.view-transition-group]="'app-content'" [style.view-transition-old]="'app-content'" [style.view-transition-new]="'app-content'">
+      <div class="app-inner-content">
+        <router-outlet></router-outlet>
         <app-footer></app-footer>
       </div>
     </div>

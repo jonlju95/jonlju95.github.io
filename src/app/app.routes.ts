@@ -4,6 +4,6 @@ import { AboutComponent } from './components/pages/about/about.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: HomeComponent, data: { animation: 'HomePage' } },
-  { path: 'about', component: AboutComponent, data: { animation: 'AboutPage' } },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
 ];

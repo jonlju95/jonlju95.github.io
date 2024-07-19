@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from "./components/layout/footer/footer.component";
 import { HeaderComponent } from "./components/layout/header/header.component";
@@ -8,7 +8,6 @@ import { CookieConsentModule } from "./components/specific/cookie-consent/cookie
 import { LanguageService } from './services/languageService';
 import { SidebarService } from './services/sidebarService';
 import { ThemeService } from './services/themeService';
-import { slideInAnimation } from './animations';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -27,10 +26,7 @@ import { CommonModule } from '@angular/common';
     ThemeService,
     SidebarService,
     LanguageService,
-    TranslateModule],
-  animations: [
-    slideInAnimation
-  ]
+    TranslateModule]
 })
 export class AppComponent implements OnInit {
   title = 'jonlju95.github.io';
@@ -38,8 +34,7 @@ export class AppComponent implements OnInit {
   constructor(
     public themeService: ThemeService,
     public sidebarService: SidebarService,
-    public languageService: LanguageService,
-    private contexts: ChildrenOutletContexts) {
+    public languageService: LanguageService) {
   }
 
   ngOnInit(): void {
