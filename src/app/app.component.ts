@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from "./components/layout/footer/footer.component";
 import { HeaderComponent } from "./components/layout/header/header.component";
 import { HomeComponent } from "./components/pages/home/home.component";
-import { SidebarComponent } from "./components/layout/sidebar/sidebar.component";
 import { CookieConsentModule } from "./components/specific/cookie-consent/cookie-consent.module";
 import { LanguageService } from './services/languageService';
 import { SidebarService } from './services/sidebarService';
@@ -13,7 +12,7 @@ import { ThemeService } from './services/themeService';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, CookieConsentModule, SidebarComponent, HomeComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, CookieConsentModule, HomeComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [ThemeService, SidebarService, LanguageService, TranslateModule]
