@@ -1,7 +1,8 @@
 @import '../../../../assets/styles/themes.scss';
 
 .home {
-  width: 100%;
+  min-height: calc(80vh - 56px);
+  height: inherit;
   margin-left: auto;
   margin-right: auto;
   margin-top: 56px;

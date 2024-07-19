@@ -4,14 +4,16 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
 import { CookieConsentModule } from './components/specific/cookie-consent/cookie-consent.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [BrowserModule,
+  providers: [
+    BrowserModule,
     CommonModule,
     CookieConsentModule,
     NgbModule,
@@ -26,7 +28,8 @@ export const appConfig: ApplicationConfig = {
       }
     })),
     importProvidersFrom(TranslatePipe),
-    provideHttpClient(withFetch())]
+    provideAnimations(),
+    BrowserAnimationsModule]
 };
 
 // required for AOT compilation

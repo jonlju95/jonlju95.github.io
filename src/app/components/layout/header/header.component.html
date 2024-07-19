@@ -1,11 +1,12 @@
 <nav class="nav-bar animated-element">
   <div class="row h-100 d-flex align-items-center">
     <div class="col-12 d-flex">
-      <div class="col-6 d-flex align-items-center">
-        <h3 class="logo ms-3  mb-0 accent-font">jL.</h3>
+      <div class="col-6 d-flex align-items-center clickable" (click)="navigateToPage('/')">
+        <h3 class="logo ms-3 me-3 mb-0 accent-font">jL.</h3>
+        <a class="p-3 clickable" (click)="navigateToPage('/home')" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
       </div>
       <div class="col-6 d-flex justify-content-end page-links">
-        <span class="p-3 clickable">About</span>
+        <span class="p-3 clickable" (click)="navigateToPage('/about')" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>
         <span class="p-3 clickable">Projects</span>
         <span class="p-3 clickable">Contact</span>
         <span class="p-3 clickable">Resume</span>
