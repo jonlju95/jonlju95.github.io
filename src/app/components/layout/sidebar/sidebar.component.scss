@@ -15,6 +15,7 @@
   padding: 1rem 1rem 3rem 1.5rem;
   white-space: nowrap;
   transition: width 0.4s ease-in-out;
+  font-size: large;
 
   &.hidden {
     width: 15rem;
@@ -31,18 +32,41 @@
     margin-right: inherit;
 
     &:first-child {
+      padding-bottom: 5rem;
       border-bottom: var(--neutral-400) 1px solid;
     }
 
     &:last-child {
       border-top: var(--neutral-400) 1px solid;
     }
+  }
 
+  .sidebar-header {
+    h3 {
+      color: var(--neutral-200);
+    }
+
+    h5 {
+      color: var(--neutral-300);
+    }
+
+    &.fadeOutHeader {
+      opacity: 1;
+      animation: fadeOut 0.2s ease-in-out forwards;
+    }
+
+    &.fadeInHeader {
+      opacity: 0;
+      animation: fadeIn 0.2s ease-in-out forwards 0.4s;
+    }
+
+    &:last-child {
+      top: 1rem;
+    }
   }
 }
 
 .sidebar-action {
-  font-size: large;
   padding: 0.5rem;
   border-radius: 6px;
 

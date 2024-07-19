@@ -21,6 +21,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   public loading: boolean = true;
   public sidebarClass: string = 'hidden';
+  public sidebarHeader: string = 'fadeInHeader';
+  public sidebarHeaderExpand: string = 'fadeOutHeader';
   public sidebarText: string = 'fadeOut';
   public themeSwitch: string = 'fadeOut';
 
@@ -38,8 +40,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
   }
 
   onLanguageChange() {
-    const currentLang = this.languageService.getCurrentLang() === 'en' ? 'se' : 'en';
-    this.languageService.setLanguage(currentLang);
+    // const currentLang = this.languageService.getCurrentLang() === 'en' ? 'se' : 'en';
+    // this.languageService.toggleLanguage(currentLang);
   }
 
   expandSidebar(expand: boolean) {
@@ -49,6 +51,8 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   animateSidebar(expand: boolean) {
     this.sidebarClass = expand ? 'expanded' : 'hidden';
+    this.sidebarHeader = expand ? 'fadeOutHeader' : 'fadeInHeader';
+    this.sidebarHeaderExpand = expand ? 'fadeInHeader' : 'fadeOutHeader';
     this.sidebarText = expand ? 'fadeIn' : 'fadeOut';
     this.themeSwitch = expand ? 'fadeIn' : 'fadeOut';
   }
