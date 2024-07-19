@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install --legacy-peer-deps
+
+    - name: Build
+      run: ng build --configuration production --base-href "https://jonlju95.github.io/jonlju95/"
+
+    - name: Deploy
+      run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
