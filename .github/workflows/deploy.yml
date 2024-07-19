@@ -19,7 +19,10 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install --f
+      run: npm install --legacy-peer-deps
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
 
     - name: Build
       run: ng build --base-href "https://jonlju95.github.io/jonlju95/"
