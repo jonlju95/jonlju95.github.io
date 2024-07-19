@@ -28,6 +28,6 @@ jobs:
       run: ng build --base-href "https://jonlju95.github.io/jonlju95/"
 
     - name: Deploy
-      run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser
+      run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser --no-silent
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
