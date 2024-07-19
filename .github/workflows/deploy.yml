@@ -22,7 +22,7 @@ jobs:
       run: npm install --legacy-peer-deps
 
     - name: Build
-      run: ng build --configuration production --base-href "https://jonlju95.github.io/jonlju95/"
+      run: ng build --base-href "https://jonlju95.github.io/jonlju95/"
 
     - name: Deploy
       run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser
