@@ -24,6 +24,11 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
+    - name: Configure Git
+      run: |
+        git config --global user.email "jonatan.ljung@hotmail.com"
+        git config --global user.name "Jonatan Ljung"
+
     - name: Build
       run: ng build --base-href "https://jonlju95.github.io/jonlju95/"
 
