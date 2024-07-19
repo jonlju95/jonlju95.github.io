@@ -5,14 +5,14 @@
     font-family: 'Montserrat', sans-serif !important;
 
     &.btn-primary {
-        background-color: var(--neutral-200);
-        border-color: var(--neutral-200);
+        background-color: var(--accent-400);
+        border-color: var(--accent-400);
         color: var(--neutral-900);
     }
 
     &.btn-secondary {
-        background-color: var(--neutral-300);
-        border-color: var(--neutral-300);
+        background-color: var(--accent-200);
+        border-color: var(--accent-200);
         color: var(--neutral-900);
     }
 }
