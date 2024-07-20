@@ -3,44 +3,5 @@
 }
 
 .app-content {
-  position: static;
-  max-height: calc(100vh - 56px);
-  margin-top: 56px;
-  view-transition-name: app-content;
-
-  .app-inner-content {
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh - 56px);
-  }
-}
-
-@keyframes enter {
-  0% {
-    opacity: 0;
-    transform: translateY(56px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes exit {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-::view-transition-old(app-content) {
-  animation: 150ms linear both exit;
-}
-
-::view-transition-new(app-content) {
-  animation: 150ms 100ms linear both enter;
+  position: relative;
 }

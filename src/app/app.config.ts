@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter, withViewTransitions } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
@@ -10,15 +10,17 @@ import { CommonModule } from '@angular/common';
 import { CookieConsentModule } from './components/specific/cookie-consent/cookie-consent.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     CookieConsentModule,
     NgbModule,
-    provideRouter(routes, withViewTransitions({
-      skipInitialTransition: true})),
+    provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(TranslateModule.forRoot({
@@ -29,8 +31,9 @@ export const appConfig: ApplicationConfig = {
       }
     })),
     importProvidersFrom(TranslatePipe),
-    provideAnimations(),
-    BrowserAnimationsModule]
+    provideAnimationsAsync(),
+    provideAnimations()
+  ],
 };
 
 // required for AOT compilation

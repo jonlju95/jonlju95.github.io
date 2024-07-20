@@ -1,5 +1,5 @@
-<nav class="nav-bar animated-element">
-  <div class="row h-100 d-flex align-items-center">
+<header class="nav-bar animated-element">
+  <div class="header-container row h-100 d-flex align-items-center">
     <div class="col-12 d-flex">
       <div class="col-6 d-flex align-items-center clickable" (click)="navigateToPage('/')">
         <h3 class="logo ms-3 me-3 mb-0 accent-font">jL.</h3>
@@ -15,7 +15,7 @@
         [tooltipClass]="'animated-element tooltip'">
           <i [ngClass]="{ 'fas': this.themeService.currentTheme === 'dark', 'far': this.themeService.currentTheme !== 'dark'}" class="fa-moon"></i>
         </div>
-        <div class="d-flex align-items-center p-3 clickable language-button" (click)="onLanguageChange()"
+        <div class="d-flex align-items-center me-3 p-3 clickable language-button" (click)="onLanguageChange()"
         [ngbTooltip]="'Language' | translate" placement="bottom-end"
         [tooltipClass]="'animated-element tooltip'">
           <img *ngIf="this.languageService.getCurrentLang() === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png">
@@ -24,4 +24,4 @@
       </div>
     </div>
   </div>
-</nav>
+</header>

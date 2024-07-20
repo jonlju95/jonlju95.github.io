@@ -2,11 +2,14 @@
 @import './assets/styles/_themes.scss';
 @import './assets/styles/_buttons.scss';
 
-html,
-body {
+html {
   width: 100vw;
-  height: 100vh;
+}
+
+body {
+  max-height: 100vh;
   margin: 0;
+  padding-top: 56px;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 
