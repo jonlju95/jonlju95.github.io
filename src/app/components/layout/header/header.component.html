@@ -1,9 +1,8 @@
-<header class="nav-bar animated-element">
+<header class="animated-element">
   <div class="header-container row h-100 d-flex align-items-center">
     <div class="col-12 d-flex">
-      <div class="col-6 d-flex align-items-center clickable" (click)="navigateToPage('/')">
-        <h3 class="logo ms-3 me-3 mb-0 accent-font">jL.</h3>
-        <a class="p-3 clickable" (click)="navigateToPage('/home')" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      <div class="col-6 d-flex align-items-center">
+        <h3 class="logo ms-3 me-3 mb-0 accent-font clickable" (click)="navigateToPage('/home')">jL.</h3>
       </div>
       <div class="col-6 d-flex justify-content-end page-links">
         <span class="p-3 clickable" (click)="navigateToPage('/about')" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</span>

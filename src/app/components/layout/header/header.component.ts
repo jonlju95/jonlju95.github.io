@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeService } from '../../../services/themeService';
-import { LanguageService } from '../../../services/languageService';
+import { ThemeService } from '../../../services/theme.service';
+import { LanguageService } from '../../../services/language.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { Router } from '@angular/router';

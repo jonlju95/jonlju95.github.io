@@ -1,11 +1,8 @@
 @import '../../../../assets/styles/themes.scss';
 
 footer {
-  position: relative;
-  top: 100%;
-  left: 0;
-  width: 100vw;
-  height: 20vh;
+  width: 100svw;
+  height: 20svh;
   background-color: var(--neutral-900);
   color: var(--neutral-100);
 }

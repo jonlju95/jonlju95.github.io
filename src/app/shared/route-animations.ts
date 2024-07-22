@@ -1,15 +1,15 @@
-import { animate, query, style, transition, trigger, group } from '@angular/animations';
+import { animate, query, style, transition, trigger, group, state } from '@angular/animations';
 
 export const routeTransition = trigger('routeTransition', [
   transition('* <=> *', [
     group([
       query(':enter', [
-        style({ opacity: 0, position: 'absolute', top: '5%', transform: 'translateY(5%)', width: '100%' }),
-        animate('200ms 50ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        style({ opacity: 0, transform: 'translateY(5%)', position: 'absolute', top: '0', width: '100svw' }),
+        animate('250ms 50ms ease-out', style({ opacity: 1, transform: 'translateY(0)', position: 'absolute', top: '56px', width: '100svw' }))
       ], { optional: true }),
       query(':leave', [
-        style({ opacity: 1, position: 'absolute', top: '0', transform: 'translateY(0)', width: '100%' }),
-        animate('150ms ease-in', style({ opacity: 0, transform: 'translateY(5%)' }))
+        style({ opacity: 1, transform: 'translateY(0)', position: 'absolute', top: '56px', width: '100svw' }),
+        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(5%)', position: 'absolute', width: '100svw' }))
       ], { optional: true })
     ])
   ])

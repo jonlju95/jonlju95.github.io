@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ChildrenOutletContexts, RouterLink, RouterOutlet } from '@angular/router';
+import { ChildrenOutletContexts, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from "./components/layout/header/header.component";
 import { HomeComponent } from "./components/pages/home/home.component";
 import { CookieConsentModule } from "./components/specific/cookie-consent/cookie-consent.module";
-import { LanguageService } from './services/languageService';
-import { SidebarService } from './services/sidebarService';
-import { ThemeService } from './services/themeService';
+import { LanguageService } from './services/language.service';
+import { SidebarService } from './services/sidebar.service';
+import { ThemeService } from './services/theme.service';
 import { CommonModule } from '@angular/common';
 import { routeTransition } from './shared/route-animations';
 import { FooterComponent } from "./components/layout/footer/footer.component";
@@ -36,12 +36,11 @@ import { FooterComponent } from "./components/layout/footer/footer.component";
 })
 export class AppComponent implements OnInit {
   title = 'jonlju95.github.io';
+  isOpen = false;
 
   constructor(
-    public themeService: ThemeService,
-    public sidebarService: SidebarService,
-    public languageService: LanguageService,
-    private contexts: ChildrenOutletContexts) {
+    private contexts: ChildrenOutletContexts,
+    private router: Router) {
   }
 
   ngOnInit(): void {

@@ -1,39 +1,33 @@
 @import '../../../../assets/styles/themes.scss';
 
-.home {
-  min-height: calc(80vh - 56px);
-  background-color: transparent;
-  color: var(--neutral-900);
+.profile {
+  background-color: white;
+  width: 75%;
+  height: 0;
+  padding-top: 75%;
+  border-radius: 50%;
 
-  .profile {
-    background-color: white;
-    width: 75%;
-    height: 0;
-    padding-top: 75%;
-    border-radius: 50%;
+  // remove span after image is in place
+  span {
+    position: relative;
+    top: -40vh;
+    left: 40%
+  }
+}
 
-    span {
-      position: relative;
-      top: -40vh;
-      left: 40%
-    }
+.home-container {
+  height: calc(100vh - 56px);
+  padding: 50px 3rem 80px 3rem;
+
+  &.hero {
+    background-color: transparent !important;
   }
 
-  .home-container {
-    height: calc(100vh - 56px);
-    padding: 50px 3rem 80px 3rem;
+  &:nth-child(2n+3) {
+    background-color: var(--neutral-200);
+  }
 
-    .hero {
-      background-color: transparent;
-      height: 100vh;
-    }
-
-    &:nth-child(2n+3) {
-      background-color: var(--neutral-200);
-    }
-
-    &:nth-child(even) {
-      background-color: var(--neutral-300);
-    }
+  &:nth-child(even) {
+    background-color: var(--neutral-300);
   }
 }
