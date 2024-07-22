@@ -2,52 +2,56 @@
 @import './assets/styles/_themes.scss';
 @import './assets/styles/_buttons.scss';
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
+html {
+  body {
+    min-height: 100svh;
+    margin: 0;
+    padding-top: 56px;
+    overflow-x: hidden;
 
-  background-image: url('./assets/images/background.png');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background-image: url('./assets/images/background.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 3px;
+    background-repeat: space;
+    background-attachment: fixed;
 
-  background-color: var(--background-color);
-  background-blend-mode: soft-light;
-  color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: var(--background-color);
+    background-blend-mode: soft-light;
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
 
-  .accent-font {
-    font-family: 'Bebas Neue', sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
+
+    .accent-font {
+      font-family: 'Bebas Neue', sans-serif !important;
+    }
   }
-}
 
-.animated-element {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
+  // Put this at every component that should have an animated theme
+  .animated-element {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
 
-.preload * {
-  transition: none !important;
-  animation-duration: 0.001s !important;
-}
+  .preload * {
+    transition: none !important;
+    animation-duration: 0.001s !important;
+  }
 
-.clickable {
-  cursor: pointer;
-}
+  .clickable {
+    cursor: pointer;
+  }
 
-.tooltip {
-  font-family: 'Karla', sans-serif;
-  font-size: 1rem;
-  position: fixed !important;
-  z-index: 10000;
-  margin-left: 0.75rem !important;
-  --bs-tooltip-bg: var(--neutral-600);
-  --bs-tooltip-color: var(--neutral-0);
-  border-radius: 6px;
+  .tooltip {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    z-index: 9999;
+    border-radius: 6px;
+    --bs-tooltip-bg: var(--neutral-600);
+    --bs-tooltip-color: var(--neutral-0);
+  }
 }

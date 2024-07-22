@@ -1,6 +1,7 @@
-.app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: "Karla", sans-serif;
+.wrapper {
+}
+
+.app-content {
+  min-height: calc(80svh - 56px);
+  min-width: 100svw;
 }

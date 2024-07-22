@@ -1,11 +1,13 @@
-<ng-container class="animated-element">
-  <app-cookie-consent></app-cookie-consent>
+<div class="wrapper">
   <app-header></app-header>
-  <!-- <app-sidebar></app-sidebar> -->
-  <app-home></app-home>
-  <app-footer></app-footer>
-  <router-outlet />
+  <main class="app-content d-flex flex-column justify-content-between">
+    <div class="app-router-outlet-content" [@routeTransition]="getRouteAnimationData()">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
 
   <!--TODO remove following at later date-->
   <p style="z-index: 99999; position: fixed; bottom: 1rem; left: 1rem; font-size: xx-large;">wip</p>
-</ng-container>
+  <app-cookie-consent></app-cookie-consent>
+</div>
