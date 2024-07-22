@@ -4,35 +4,54 @@ import { ThemeService } from '../../../services/theme.service';
 import { LanguageService } from '../../../services/language.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { slideSidebar } from '../../../shared/component-animations';
+import { SidebarService } from '../../../services/sidebar.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, NgbModule, TranslateModule],
+  imports: [CommonModule, NgbModule, TranslateModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [slideSidebar],
 })
 export class HeaderComponent implements OnInit {
-  public currentTheme: string = '';
-  public currentLang: string = '';
 
-  constructor(public themeService: ThemeService, public languageService: LanguageService, private router: Router) { }
+  constructor(
+    private themeService: ThemeService,
+    private languageService: LanguageService,
+    private sidebarService: SidebarService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.currentTheme = this.themeService.currentTheme;
-    this.currentLang = this.languageService.getCurrentLang();
+  }
+
+  public navigateToPage(path: string) {
+    this.router.navigate([path]);
   }
 
   public onThemeSwitchChange() {
     this.themeService.toggleTheme();
   }
 
+  public get currentTheme() {
+    return this.themeService.currentTheme;
+  }
+
   public onLanguageChange() {
     this.languageService.toggleLanguage();
   }
 
-  public navigateToPage(path: string) {
-    this.router.navigate([path]);
+  public get currentLang() {
+    return this.languageService.currentLang;
+  }
+
+  public onSidebarToggle() {
+    this.sidebarService.toggleSidebar();
+  }
+
+  public get showSidebar() {
+    return this.sidebarService.sidebarStatus;
   }
 }

@@ -10,6 +10,7 @@ import { ThemeService } from './services/theme.service';
 import { CommonModule } from '@angular/common';
 import { routeTransition } from './shared/route-animations';
 import { FooterComponent } from "./components/layout/footer/footer.component";
+import { SidebarComponent } from "./components/layout/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,8 @@ import { FooterComponent } from "./components/layout/footer/footer.component";
     HeaderComponent,
     FooterComponent,
     CookieConsentModule,
-    HomeComponent,
-    CommonModule
+    CommonModule,
+    SidebarComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private contexts: ChildrenOutletContexts,
-    private router: Router) {
+    private sidebarService: SidebarService) {
   }
 
   ngOnInit(): void {
@@ -53,5 +54,9 @@ export class AppComponent implements OnInit {
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  }
+
+  get showSidebar() {
+    return this.sidebarService.sidebarStatus;
   }
 }

@@ -5,15 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
   // Sidebar should be closed on load
-  private isOpen: boolean = false;
+  private showSidebar: boolean = false;
 
   constructor() { }
 
-  setActive(open: boolean): void {
-    this.isOpen = open;
+  toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
 
-  get isActive(): boolean {
-    return this.isOpen;
+  get sidebarStatus(): boolean {
+    return this.showSidebar;
   }
 }
