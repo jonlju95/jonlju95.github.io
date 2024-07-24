@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../../app/services/theme.service';
 import { LanguageService } from '../../../app/services/language.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { Router, RouterModule } from '@angular/router';
-import { slideSidebar } from '../../animations/component-animations';
+import { fadeInOut, slideSidebar } from '../../animations/component-animations';
 import { SidebarService } from '../../../app/services/sidebar.service';
 
 @Component({
@@ -14,18 +14,15 @@ import { SidebarService } from '../../../app/services/sidebar.service';
   imports: [CommonModule, NgbModule, TranslateModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [slideSidebar],
+  animations: [slideSidebar, fadeInOut],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(
     private themeService: ThemeService,
     private languageService: LanguageService,
     private sidebarService: SidebarService,
     private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   public navigateToPage(path: string) {
     this.router.navigate([path]);

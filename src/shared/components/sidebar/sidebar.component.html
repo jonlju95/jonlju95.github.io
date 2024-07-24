@@ -68,14 +68,14 @@
     <li>
       <div class="d-flex align-items-center justify-content-between p-3 language-button">
         <div class="col-1 d-flex align-items-center">
-          <img *ngIf="currentLang === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png">
-          <img *ngIf="currentLang === 'se'" src="../../../../assets/images/sweden-flag-icon.png">
+          <img *ngIf="currentLang === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png" alt="English">
+          <img *ngIf="currentLang === 'se'" src="../../../../assets/images/sweden-flag-icon.png" alt="Swedish">
         </div>
         <div class="col-8 d-flex align-items-center">
           <span class="ms-2">Language</span>
         </div>
         <div class="d-flex align-items-center">
-          <app-slide-toggle [isChecked]="currentLang === 'en'" (click)="onLanguageChange()"></app-slide-toggle>
+          <app-slide-toggle [isChecked]="currentLang === 'en'" (butt)="onLanguageChange()"></app-slide-toggle>
         </div>
       </div>
     </li>

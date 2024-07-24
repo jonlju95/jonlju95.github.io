@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-slide-toggle',
@@ -8,18 +8,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './slide-toggle.component.html',
   styleUrl: './slide-toggle.component.scss'
 })
-export class SlideToggleComponent implements OnInit {
-  @Input() isChecked: boolean = false;
+export class SlideToggleComponent {
+  @Input() isChecked = false;
 
-  @Output() click = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
+  @Output() buttonClick = new EventEmitter();
 
   toggle() {
-    this.click.emit();
+    this.buttonClick.emit();
   }
 }

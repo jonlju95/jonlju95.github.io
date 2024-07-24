@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ChildrenOutletContexts, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ChildrenOutletContexts, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from "../shared/components/header/header.component";
-import { HomeComponent } from "./components/common/home/home.component";
 import { CookieConsentModule } from "../shared/components/cookie-consent/cookie-consent.module";
 import { LanguageService } from './services/language.service';
 import { SidebarService } from './services/sidebar.service';

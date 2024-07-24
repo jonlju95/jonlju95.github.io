@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
   // Sidebar should be closed on load
-  private showSidebar: boolean = false;
-
-  constructor() { }
+  private showSidebar = false;
 
   toggleSidebar() {
     this.showSidebar = !this.showSidebar;

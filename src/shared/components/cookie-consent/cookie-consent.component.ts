@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./cookie-consent.component.scss']
 })
 export class CookieConsentComponent implements OnInit {
-  consentGiven: string = '';
+  consentGiven = '';
   private readonly consentKey = 'cookieConsent';
 
   constructor(private cookieService: CookieService) {}

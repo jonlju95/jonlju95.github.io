@@ -6,7 +6,7 @@ import { Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, 
 })
 export class OutsideClickDirective implements OnInit, OnDestroy {
   @Input() appOutsideClick!: boolean;
-  @Output() outsideClick: EventEmitter<void> = new EventEmitter();
+  @Output() outsideClick = new EventEmitter<void>();
   constructor(private element: ElementRef, private renderer: Renderer2) {}
 
   private listener: (() => void) | undefined;

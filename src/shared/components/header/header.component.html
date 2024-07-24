@@ -19,16 +19,18 @@
             <a>Resume</a>
           </li>
           <li class="d-none d-md-block">
-            <div class="d-flex align-items-center p-3 clickable" (click)="onThemeSwitchChange()"
+            <div class="d-flex align-items-center p-3 clickable theme-button" (click)="onThemeSwitchChange()"
               [ngbTooltip]="'Dark Mode' | translate" placement="bottom-end" [tooltipClass]="'animated-element tooltip'">
-              <i [ngClass]="{ 'fas': currentTheme === 'dark', 'far': currentTheme !== 'dark'}" class="fa-moon"></i>
+              <i *ngIf="currentTheme === 'light'" class="bi bi-moon" [@fadeInOut]></i>
+              <i *ngIf="currentTheme === 'dark'" class="bi bi-moon-fill" [@fadeInOut]></i>
             </div>
           </li>
           <li class="d-none d-md-block">
             <div class="d-flex align-items-center p-3 clickable language-button" (click)="onLanguageChange()"
               [ngbTooltip]="'Language' | translate" placement="bottom-end" [tooltipClass]="'animated-element tooltip'">
-              <img *ngIf="currentLang === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png">
-              <img *ngIf="currentLang === 'se'" src="../../../../assets/images/sweden-flag-icon.png">
+              <img *ngIf="currentLang === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png"
+                alt="English">
+              <img *ngIf="currentLang === 'se'" src="../../../../assets/images/sweden-flag-icon.png" alt="Swedish">
             </div>
           </li>
           <li class="d-md-none d-block">

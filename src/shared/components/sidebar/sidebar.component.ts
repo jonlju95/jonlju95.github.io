@@ -35,9 +35,9 @@ export class SidebarComponent {
     private el: ElementRef) { }
 
   @HostListener('document:click', ['$event'])
-  clickout(event: any) {
+  clickout(event: MouseEvent) {
     const sidebarToggleButton = document.getElementById('sidebar-toggle');
-    if (sidebarToggleButton && (sidebarToggleButton === event.target || sidebarToggleButton.contains(event.target))) {
+    if (sidebarToggleButton && (sidebarToggleButton === event.target || sidebarToggleButton.contains(event.target as Node))) {
       return; // Do nothing if the button or its children were clicked
     }
 
