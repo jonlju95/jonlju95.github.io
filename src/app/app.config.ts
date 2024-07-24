@@ -2,7 +2,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter, RouterModule, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -22,7 +22,6 @@ export const appConfig: ApplicationConfig = {
     NgbModule,
     RouterModule,
     provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top' })),
-    provideClientHydration(),
     provideHttpClient(withInterceptorsFromDi()),
     importProvidersFrom(TranslateModule.forRoot({
       loader: {
