@@ -1,6 +1,12 @@
-.app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: "Karla", sans-serif;
+.wrapper {
+  max-width: 100svw;
+  overflow: hidden;
+
+  main {
+    min-height: inherit;
+
+    div {
+      min-height: inherit;
+    }
+  }
 }
