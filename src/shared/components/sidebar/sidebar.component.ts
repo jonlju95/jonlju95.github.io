@@ -20,7 +20,7 @@ import { SlideToggleComponent } from "../slide-toggle/slide-toggle.component";
     RouterModule,
     OutsideClickDirective,
     SlideToggleComponent
-],
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   animations: [slideSidebar, fadeInOut],
