@@ -13,11 +13,18 @@
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
 
   li {
+    &:first-child {
+      max-height: 56px;
+
+      i {
+        margin: -0.75rem;
+      }
+    }
+
     &:not(:first-child) {
       width: 100%;
       padding-left: 6px;
 
-      &:hover,
       &.active {
         transition: background-color 0.5s ease, box-shadow 0.25s ease;
         background-color: var(--neutral-100);
@@ -27,13 +34,6 @@
       &:nth-child(5n+1) {
         position: fixed;
         bottom: 56px;
-      }
-    }
-
-    &:first-child:hover {
-      svg {
-        transform: scale(1.1);
-        transition: transform 200ms ease-in-out;
       }
     }
 
