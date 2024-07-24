@@ -1,7 +1,6 @@
 .wrapper {
-  min-height: calc(100svh - 56px);
   max-width: 100svw;
-  overflow-x: hidden;
+  overflow: hidden;
 
   main {
     min-height: inherit;

@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChildrenOutletContexts, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { HeaderComponent } from "./components/layout/header/header.component";
-import { HomeComponent } from "./components/pages/home/home.component";
-import { CookieConsentModule } from "./components/specific/cookie-consent/cookie-consent.module";
+import { HeaderComponent } from "../shared/components/header/header.component";
+import { HomeComponent } from "./components/common/home/home.component";
+import { CookieConsentModule } from "../shared/components/cookie-consent/cookie-consent.module";
 import { LanguageService } from './services/language.service';
 import { SidebarService } from './services/sidebar.service';
 import { ThemeService } from './services/theme.service';
 import { CommonModule } from '@angular/common';
-import { routeTransition } from './shared/route-animations';
-import { FooterComponent } from "./components/layout/footer/footer.component";
-import { SidebarComponent } from "./components/layout/sidebar/sidebar.component";
+import { routeTransition } from '../shared/animations/route-animations';
+import { FooterComponent } from "../shared/components/footer/footer.component";
+import { SidebarComponent } from "../shared/components/sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
@@ -33,7 +33,8 @@ import { SidebarComponent } from "./components/layout/sidebar/sidebar.component"
     TranslateModule],
   animations: [
     routeTransition
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = 'jonlju95.github.io';

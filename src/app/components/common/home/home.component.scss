@@ -1,0 +1,42 @@
+.home-container {
+  height: clamp(100svh - 56px, 100svh - 56px, 100svh);
+  padding: 50px 3rem 80px 3rem;
+
+  &.hero {
+    background-color: transparent !important;
+  }
+
+  &:nth-child(2n+3) {
+    background-color: var(--neutral-200);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--neutral-300);
+  }
+}
+
+.profile {
+  background-color: white;
+  width: 75%;
+  height: 0;
+  padding-top: 75%;
+  border-radius: 50%;
+  position: relative;
+
+  // remove span after image is in place
+  span {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 47.7px);
+  }
+
+  img {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    object-fit: cover;
+    border-radius: 50%;
+    top: 1%;
+    left: 1%;
+  }
+}
