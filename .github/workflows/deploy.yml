@@ -19,7 +19,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: npm install
 
     - name: Install Angular CLI
       run: npm install -g @angular/cli
@@ -33,6 +33,6 @@ jobs:
       run: ng build --base-href "https://jonlju95.github.io/jonlju95/"
 
     - name: Deploy
-      run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser --no-silent
+      run: npx angular-cli-ghpages --dir=dist/jonlju95.github.io/browser/ --no-silent
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
