@@ -28,7 +28,7 @@ export class LanguageService {
     }
   }
 
-  getCurrentLang(): string {
+  get currentLang(): string {
     return this.translateService.currentLang || 'se';
   }
 

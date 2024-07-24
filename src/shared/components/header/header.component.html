@@ -1,0 +1,47 @@
+<ng-container>
+  <header class="animated-element">
+    <div class="header-container row h-100 d-flex align-items-center">
+      <div class="col-12 d-flex">
+        <div class="col-6 d-flex align-items-center">
+          <h3 class="logo ms-3 me-3 mb-0 accent-font clickable" (click)="navigateToPage('/home')">jL.</h3>
+        </div>
+        <ul class="col-6 d-flex justify-content-end align-items-center m-0 page-links">
+          <li class="p-3 clickable d-none d-md-block" (click)="navigateToPage('/about')" routerLink="/about"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a>About</a></li>
+          <li class="p-3 clickable d-none d-md-block" (click)="navigateToPage('/projects')" routerLink="/projects"
+            routerLinkActive="active"><a>Projects</a></li>
+          <li class="p-3 clickable d-none d-md-block" (click)="navigateToPage('/contact')" routerLink="/contact"
+            routerLinkActive="active">
+            <a>Contact</a>
+          </li>
+          <li class="p-3 clickable d-none d-md-block" (click)="navigateToPage('/resume')" routerLink="/resume"
+            routerLinkActive="active">
+            <a>Resume</a>
+          </li>
+          <li class="d-none d-md-block">
+            <div class="d-flex align-items-center p-3 clickable theme-button" (click)="onThemeSwitchChange()"
+              [ngbTooltip]="'Dark Mode' | translate" placement="bottom-end" [tooltipClass]="'animated-element tooltip'">
+              <i *ngIf="currentTheme === 'light'" class="bi bi-moon" [@fadeInOut]></i>
+              <i *ngIf="currentTheme === 'dark'" class="bi bi-moon-fill" [@fadeInOut]></i>
+            </div>
+          </li>
+          <li class="d-none d-md-block">
+            <div class="d-flex align-items-center p-3 clickable language-button" (click)="onLanguageChange()"
+              [ngbTooltip]="'Language' | translate" placement="bottom-end" [tooltipClass]="'animated-element tooltip'">
+              <img *ngIf="currentLang === 'en'" src="../../../../assets/images/united-kingdom-flag-icon.png"
+                alt="English">
+              <img *ngIf="currentLang === 'se'" src="../../../../assets/images/sweden-flag-icon.png" alt="Swedish">
+            </div>
+          </li>
+          <li class="d-md-none d-block">
+            <div id="sidebar-toggle" class="d-flex align-items-center p-3 clickable" (click)="onSidebarToggle()">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="18px">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</ng-container>

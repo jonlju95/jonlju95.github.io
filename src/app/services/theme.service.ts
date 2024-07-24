@@ -17,7 +17,6 @@ export class ThemeService {
   }
 
   toggleTheme(): void {
-    console.log(this.cookieService.get(this.consentKey))
     const currentTheme = this.document.body.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     this.document.body.setAttribute('data-theme', newTheme);

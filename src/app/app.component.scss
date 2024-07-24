@@ -1,7 +1,12 @@
 .wrapper {
-}
+  max-width: 100svw;
+  overflow: hidden;
 
-.app-content {
-  min-height: calc(80svh - 56px);
-  min-width: 100svw;
+  main {
+    min-height: inherit;
+
+    div {
+      min-height: inherit;
+    }
+  }
 }
