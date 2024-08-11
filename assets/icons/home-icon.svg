@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+  width="24"
+  height="18"
+  viewBox="0 0 24 18"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+    id="home"
+    stroke="currentColor"
+    d="M 20.669568,6.1420781 V 17.669567 h -6.44465 V 11.281804 10.82253 H 13.714943 10.285068 9.7750931 v 0.459274 6.387763 H 3.330432 V 6.1420781 l 8.669567,-5.81165159 z"
+    style="stroke-width:0.75;stroke-linejoin:round;" />
+</svg>
